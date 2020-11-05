@@ -1,0 +1,15 @@
+{
+  "coconut": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-expressapi-coconut-13231-authRole",
+      "UnauthRoleArn": "arn:aws:iam::908382348285:role/amplify-expressapi-coconut-13231-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::908382348285:role/amplify-expressapi-coconut-13231-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-expressapi-coconut-13231-deployment",
+      "UnauthRoleName": "amplify-expressapi-coconut-13231-unauthRole",
+      "StackName": "amplify-expressapi-coconut-13231",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:908382348285:stack/amplify-expressapi-coconut-13231/9063dd20-1f84-11eb-bb84-0a4c59d332e0",
+      "AmplifyAppId": "d1xp9rnjxq31sv"
+    }
+  }
+}
