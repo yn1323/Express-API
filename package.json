@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "code": "code ./amplify/backend/function/expressapi/src/",
     "start": "nodemon ./amplify/backend/function/expressapi/src/",
     "update": "amplify update"
   },
