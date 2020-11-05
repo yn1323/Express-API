@@ -1,0 +1,26 @@
+{
+  "css.validate": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "stylelint.enable": false,
+  "typescript.tsserver.trace": "verbose",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "codeActionsOnSaveTimeout": true,
+    "editor.codeActionsOnSaveTimeout": true,
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+  },
+  "editor.formatOnSave": false,
+  "eslint.workingDirectories": [
+    {
+      "directory": "./app",
+      "changeProcessCWD": true
+    }
+  ],
+  "eslint.alwaysShowStatus": true,
+}
