@@ -12,7 +12,15 @@ npm i (only first time)
 nodemon
 ```
 
-## Development Envpong 
+## Scipt
+1. `npm run code`
+   - Open in VSCode and enables auto lint
+2. `npm run start`
+   - Start express server
+3. `npm run update`
+   - Push to AWS
+
+## Development Endpoint
 - localhost:3000
 
 ## Enable auto lint

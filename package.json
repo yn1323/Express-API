@@ -1,0 +1,21 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "code": "code ./amplify/backend/function/expressapi/src/",
+    "start": "nodemon ./amplify/backend/function/expressapi/src/",
+    "update": "amplify update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yn1323/Express-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yn1323/Express-API/issues"
+  },
+  "homepage": "https://github.com/yn1323/Express-API#readme"
+}
