@@ -23,11 +23,4 @@
     }
   ],
   "eslint.alwaysShowStatus": true,
-  // Monokai Extended for "console" color
-  "editor.semanticTokenColorCustomizations": {
-    "enabled": true,
-    "rules": {
-      "variable.defaultLibrary": "#66d9ef"
-    }
-  }
 }

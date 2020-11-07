@@ -32,13 +32,8 @@ app.use((req, res, next) => {
 })
 
 // POG-Portal
-app.get('/pog/top', (req, res) => {
-  res.json({
-    success: 'post call succeed!',
-    url: req.url,
-    body: pog('/top', req),
-  })
-  // res.json(pog('/top', req))
+app.get('/pog/top', async (req, res) => {
+  res.json(await pog('/top', req))
 })
 app.get('/pog/person', (req, res) => {
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })

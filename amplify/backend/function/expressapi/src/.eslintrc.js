@@ -4,6 +4,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react',
   ],
+  parser: "babel-eslint",
   plugins: ['prettier'],
   env: {node: true, es6: true},
   parserOptions: {
@@ -13,6 +14,5 @@ module.exports = {
     },
   },
   rules: {
-    'react/display-name': 'off',
   }
 };
