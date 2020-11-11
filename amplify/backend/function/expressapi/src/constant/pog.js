@@ -4,3 +4,5 @@ exports.msg = {
   POG_URL: 'http://pogstarion.com/',
   SERVER_ERROR: 'Sever Error.',
 }
+
+exports.POGSTARION_URL = 'http://pogstarion.com/'

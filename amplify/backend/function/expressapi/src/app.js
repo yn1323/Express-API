@@ -35,17 +35,17 @@ app.use((req, res, next) => {
 app.get('/pog/top', async (req, res) => {
   res.json(await pog('/top', req))
 })
-app.get('/pog/person', (req, res) => {
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+app.get('/pog/person', async (req, res) => {
+  res.json(await pog('/person', req))
 })
-app.get('/pog/horse', (req, res) => {
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+app.get('/pog/horse', async (req, res) => {
+  res.json(await pog('/horse', req))
 })
-app.get('/pog/race', (req, res) => {
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+app.get('/pog/race', async (req, res) => {
+  res.json(await pog('/race', req))
 })
-app.get('/pog/raceEach', (req, res) => {
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+app.get('/pog/raceEach', async (req, res) => {
+  res.json(await pog('/raceEach', req))
 })
 
 app.listen(5000, () => {
