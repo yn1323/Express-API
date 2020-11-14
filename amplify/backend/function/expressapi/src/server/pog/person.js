@@ -5,6 +5,11 @@ module.exports = $ => {
   selectors.forEach(v =>
     $(v.selector).each((_, e) => meta[v.key].push($(e).text().trim()))
   )
+
+  // ユーザー名の数も他と合わせる
+  meta.user = meta.horse.map(_ =>
+    meta.user[0].replace('プロフィール', '').trim()
+  )
   // 血統の修正
   meta.blood = meta.blood.map(v => {
     const [father, mother] = v

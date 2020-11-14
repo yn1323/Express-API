@@ -1,13 +1,13 @@
-exports.msg = {
+const msg = {
   NO_URL: 'POG STARIONのURLではありません。',
   URL_ERROR: 'アクセスできないURLです。',
   POG_URL: 'http://pogstarion.com/',
   SERVER_ERROR: 'Sever Error.',
 }
 
-exports.POGSTARION_URL = 'http://pogstarion.com/'
+const POGSTARION_URL = 'http://pogstarion.com/'
 
-exports.getTopScraping = () => ({
+const getTopScraping = () => ({
   header: [
     { text: '順位', value: 'order' },
     { text: 'ユーザー名', value: 'user' },
@@ -28,7 +28,7 @@ exports.getTopScraping = () => ({
   ],
 })
 
-exports.getPersonScraping = () => ({
+const getPersonScraping = () => ({
   header: [
     { text: 'No', value: 'order' },
     { text: '馬名', value: 'horse' },
@@ -45,6 +45,7 @@ exports.getPersonScraping = () => ({
     score: [],
     recent: [],
     blood: [],
+    user: [],
   },
   selectors: [
     { key: 'horse', selector: 'tbody td:nth-child(2)' },
@@ -54,5 +55,26 @@ exports.getPersonScraping = () => ({
     { key: 'score', selector: 'tbody .sogochakukaisu1' },
     { key: 'recent', selector: 'tbody .new_syokin' },
     { key: 'blood', selector: 'tbody .ketto' },
+    { key: 'user', selector: '.umalist h4' },
   ],
 })
+
+const getHorseScraping = () => {
+  const { tbody, meta } = getPersonScraping()
+  meta.user = []
+  const header = [
+    { text: 'No', value: 'order' },
+    { text: '馬名', value: 'horse' },
+    { text: '賞金', value: 'prize' },
+    { text: 'ユーザー名', value: 'user' },
+  ]
+  return { header, tbody, meta }
+}
+
+module.exports = {
+  msg,
+  POGSTARION_URL,
+  getTopScraping,
+  getPersonScraping,
+  getHorseScraping,
+}
