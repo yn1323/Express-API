@@ -1,6 +1,6 @@
 const urlExist = require('url-exists-async-await')
 
-exports.existUrl = async (data) => {
+exports.existUrl = async data => {
   let result = false
   try {
     result = await urlExist(data)
