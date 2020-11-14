@@ -2,10 +2,13 @@ const msg = {
   NO_URL: 'POG STARIONのURLではありません。',
   URL_ERROR: 'アクセスできないURLです。',
   POG_URL: 'http://pogstarion.com/',
-  SERVER_ERROR: 'Sever Error.',
+  SERVER_ERROR: 'Server Error.',
 }
 
 const POGSTARION_URL = 'http://pogstarion.com/'
+const NET_KEIBA_URL = 'https://race.netkeiba.com/'
+const NETKEIBA_RACE_DAY_URL = date =>
+  `https://race.netkeiba.com//top/race_list_sub.html?kaisai_date=${date}`
 
 const getTopScraping = () => ({
   header: [
@@ -74,6 +77,8 @@ const getHorseScraping = () => {
 module.exports = {
   msg,
   POGSTARION_URL,
+  NET_KEIBA_URL,
+  NETKEIBA_RACE_DAY_URL,
   getTopScraping,
   getPersonScraping,
   getHorseScraping,
