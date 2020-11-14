@@ -11,12 +11,13 @@ See the License for the specific language governing permissions and limitations 
 	REGION
 Amplify Params - DO NOT EDIT */
 
-var express = require('express')
-var bodyParser = require('body-parser')
-var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const pog = require('./server/pog')
+const express = require('express')
+const bodyParser = require('body-parser')
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 
 // declare a new express app
-var app = express()
+const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
@@ -30,57 +31,24 @@ app.use((req, res, next) => {
   next()
 })
 
-/**********************
- * Example get method *
- **********************/
-// app.get('/items', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'get call succeed!', url: req.url});
-// });
-
-// app.get('/items/*', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'get call succeed!', url: req.url});
-// });
-
-/****************************
- * Example post method *
- ****************************/
-
-app.post('/pogTop', (req, res) => {
-  // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+// POG-Portal
+app.get('/pog/top', async (req, res) => {
+  res.json(await pog('/top', req))
+})
+app.get('/pog/person', async (req, res) => {
+  res.json(await pog('/person', req))
+})
+app.get('/pog/horse', async (req, res) => {
+  res.json(await pog('/horse', req))
+})
+app.get('/pog/race', async (req, res) => {
+  res.json(await pog('/race', req))
+})
+app.get('/pog/raceEach', async (req, res) => {
+  res.json(await pog('/raceEach', req))
 })
 
-/****************************
- * Example put method *
- ****************************/
-
-// app.put('/items', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
-// });
-
-// app.put('/items/*', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
-// });
-
-/****************************
- * Example delete method *
- ****************************/
-
-// app.delete('/items', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'delete call succeed!', url: req.url});
-// });
-
-// app.delete('/items/*', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'delete call succeed!', url: req.url});
-// });
-
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log('App started')
 })
 
