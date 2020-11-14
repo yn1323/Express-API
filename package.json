@@ -6,7 +6,8 @@
   "scripts": {
     "code": "code ./amplify/backend/function/expressapi/src/",
     "start": "nodemon ./amplify/backend/function/expressapi/src/",
-    "update": "amplify update"
+    "update": "amplify update",
+    "push": "amplify push"
   },
   "repository": {
     "type": "git",
