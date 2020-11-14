@@ -90,7 +90,7 @@
             ],
             "paths": {
               
-              "/items": {
+              "/pog": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -189,7 +189,7 @@
                   }
                 }
               },
-              "/items/{proxy+}": {
+              "/pog/{proxy+}": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -367,7 +367,7 @@
         
         
         
-      "DeploymentAPIGWmain": {
+      "DeploymentAPIGWmaindcef997a": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",

@@ -1,12 +1,11 @@
 {
     "paths": [
         {
-            "name": "/items",
+            "name": "/pog",
             "lambdaFunction": "expressapi",
             "privacy": {
                 "open": true
-            },
-            "policyResourceName": "/items"
+            }
         }
     ],
     "resourceName": "main",
@@ -31,5 +30,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "dcef997a"
 }

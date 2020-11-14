@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-expressapi-coconut-13231-deployment",
-          "S3Key": "amplify-builds/expressapi-5379765a436f50387a52-build.zip"
+          "S3Key": "amplify-builds/expressapi-453472746975622f432b-build.zip"
         }
       }
     },

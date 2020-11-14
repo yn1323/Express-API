@@ -32,6 +32,9 @@ app.use((req, res, next) => {
 })
 
 // POG-Portal
+app.get('/pog', (req, res) => {
+  res.json({ text: 'succeeded' })
+})
 app.get('/pog/top', async (req, res) => {
   res.json(await pog('/top', req))
 })
