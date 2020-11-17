@@ -15,20 +15,21 @@ const map = {
   '/race': $ => race($),
 }
 
-module.exports = async (path, req) => {
+module.exports = async (path, url) => {
+  console.log(url)
   // URL check
   if (path !== '/race') {
-    if (!req.query || !req.query.url.includes(msg.POG_URL)) {
+    if (!url.includes(msg.POG_URL)) {
       return makeFailedJson(msg.NO_URL)
     }
   }
-  if (!(await existUrl(req.query.url))) {
+  if (!(await existUrl(url))) {
     return makeFailedJson(msg.URL_ERROR)
   }
 
   let ret = {}
   try {
-    const { $ } = await getDom(req.query.url)
+    const { $ } = await getDom(url)
     ret = map[path]($)
   } catch (e) {
     console.log(e)
