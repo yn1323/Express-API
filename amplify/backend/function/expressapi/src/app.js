@@ -35,21 +35,25 @@ app.use((_, res, next) => {
 app.get('/pog', (_, res) => {
   res.json({ text: 'succeeded' })
 })
-app.get('/pog/top', async (req, res) => {
-  res.json(await pog('/top', req))
+app.post('/pog/top', async (req, res) => {
+  const { url } = req.body
+  res.json(await pog('/top', url))
 })
-app.get('/pog/person', async (req, res) => {
-  res.json(await pog('/person', req))
+app.post('/pog/person', async (req, res) => {
+  const { url } = req.body
+  res.json(await pog('/person', url))
 })
-app.get('/pog/horse', async (req, res) => {
-  res.json(await pog('/horse', req))
+app.post('/pog/horse', async (req, res) => {
+  const { url } = req.body
+  res.json(await pog('/horse', url))
 })
-app.get('/pog/raceUrl', async (req, res) => {
-  res.json(await pog('/raceUrl', req))
+app.post('/pog/raceUrl', async (req, res) => {
+  const { url } = req.body
+  res.json(await pog('/raceUrl', url))
 })
 app.post('/pog/race', async (req, res) => {
-  req.query.url = req.body.url
-  res.json(await pog('/race', req))
+  const { url } = req.body
+  res.json(await pog('/race', url))
 })
 
 app.listen(5000, () => {
