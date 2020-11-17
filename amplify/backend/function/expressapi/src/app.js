@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use((req, res, next) => {
+app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(
     'Access-Control-Allow-Headers',
@@ -32,6 +32,9 @@ app.use((req, res, next) => {
 })
 
 // POG-Portal
+app.get('/pog', (_, res) => {
+  res.json({ text: 'succeeded' })
+})
 app.get('/pog/top', async (req, res) => {
   res.json(await pog('/top', req))
 })
@@ -41,11 +44,12 @@ app.get('/pog/person', async (req, res) => {
 app.get('/pog/horse', async (req, res) => {
   res.json(await pog('/horse', req))
 })
-app.get('/pog/race', async (req, res) => {
-  res.json(await pog('/race', req))
+app.get('/pog/raceUrl', async (req, res) => {
+  res.json(await pog('/raceUrl', req))
 })
-app.get('/pog/raceEach', async (req, res) => {
-  res.json(await pog('/raceEach', req))
+app.post('/pog/race', async (req, res) => {
+  req.query.url = req.body.url
+  res.json(await pog('/race', req))
 })
 
 app.listen(5000, () => {
