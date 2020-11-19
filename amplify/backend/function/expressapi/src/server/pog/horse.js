@@ -1,5 +1,5 @@
 const { getHorseScraping } = require('../../constant/pog')
-const { sortFragmentObject } = require('../../helper/common')
+const { makeTbody, sortFragmentObject } = require('../../helper/common')
 const { getEveryPersonUrl } = require('../../helper/pog')
 const { getAllDoms } = require('../../helper/scraping')
 const getPersonData = require('./person')
@@ -22,5 +22,5 @@ module.exports = async mainUrl => {
   header.forEach(({ value }) => (tbody[value] = sortedMeta[value]))
   tbody.order = sortedMeta.horse.map((_, i) => i + 1)
 
-  return { meta: sortedMeta, header, tbody }
+  return { meta: sortedMeta, header, tbody: makeTbody(tbody) }
 }

@@ -5,6 +5,7 @@ const existUrl = async data => {
   let result = false
   try {
     result = await urlExist(data)
+    // eslint-disable-next-line no-empty
   } catch {}
   return result
 }
@@ -66,6 +67,20 @@ const getDuplicateIndex = (baseArr, targetArr) => {
   return index
 }
 
+const makeTbody = tbody => {
+  const keys = Object.keys(tbody)
+  const len = tbody[keys[0]].length
+  const ret = []
+  for (let i = 0; i < len; i++) {
+    const tmp = {}
+    keys.forEach(key => {
+      tmp[key] = tbody[key][i]
+    })
+    ret.push(tmp)
+  }
+  return ret
+}
+
 module.exports = {
   existUrl,
   makeFailedJson,
@@ -73,4 +88,5 @@ module.exports = {
   weekDaysList,
   hasDuplicate,
   getDuplicateIndex,
+  makeTbody,
 }
