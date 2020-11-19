@@ -1,4 +1,5 @@
 const { getPersonScraping } = require('../../constant/pog')
+const { makeTbody } = require('../../helper/common')
 
 module.exports = $ => {
   const { header, tbody, meta, selectors } = getPersonScraping()
@@ -7,6 +8,7 @@ module.exports = $ => {
   )
 
   // ユーザー名の数も他と合わせる
+  // eslint-disable-next-line no-unused-vars
   meta.user = meta.horse.map(_ =>
     meta.user[0].replace('プロフィール', '').trim()
   )
@@ -23,5 +25,5 @@ module.exports = $ => {
   header.forEach(({ value }) => (tbody[value] = meta[value]))
   tbody.order = meta.horse.map((_, i) => i + 1)
 
-  return { meta, header, tbody }
+  return { meta, header, tbody: makeTbody(tbody) }
 }

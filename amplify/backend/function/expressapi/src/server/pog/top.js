@@ -1,5 +1,6 @@
 const { getTopScraping } = require('../../constant/pog')
 const { getEveryPersonUrl } = require('../../helper/pog')
+const { makeTbody } = require('../../helper/common')
 
 module.exports = $ => {
   const { header, tbody, meta, selectors } = getTopScraping()
@@ -11,5 +12,5 @@ module.exports = $ => {
   header.forEach(({ value }) => (tbody[value] = meta[value]))
   tbody.order = meta.user.map((_, i) => i + 1)
 
-  return { meta, header, tbody }
+  return { meta, header, tbody: makeTbody(tbody) }
 }
